@@ -65,7 +65,7 @@ try:
         blink_once()
         if GPIO.input(butPin) < 1:  # button is pressed
             print("debug button point 1")
-            # contents = urllib.request.urlopen("http:127.0.0.1/walletWall/public/api/paymentapproved").read()
+            contents = urllib.request.urlopen("http://localhost/dragonhack/public/index.php/api/approvepayment").read()
             clean()
             exit()
 
