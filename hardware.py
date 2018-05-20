@@ -55,6 +55,9 @@ def SetAngle(angle):
 
 print("Here we go! Press CTRL+C to exit")
 try:
+
+    INIT_TIME = time.time()
+
     while 1:
         pwm.start(0)
         print("debug point 1")
@@ -68,6 +71,12 @@ try:
             contents = urllib.request.urlopen("http://localhost/dragonhack/public/index.php/api/approvepayment").read()
             clean()
             exit()
+
+        if time.time() - INIT_TIME > 10:
+            print("debug time point 1")
+            clean()
+            exit()
+
 
 except KeyboardInterrupt:  # If CTRL+C is pressed, exit cleanly:
     print("debug exception point 1")
